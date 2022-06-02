@@ -1,0 +1,36 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+
+{% block content %}
+<div class="tables">
+	<h2 class="title1">Product List</h2>
+	<div class="bs-example widget-shadow" data-example-id="hoverable-table">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Description</th>
+					<th>Product Cost</th>
+					<th>Quantity</th>
+					<th>Discount</th>
+					<th>Image</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in productlist %}
+				<tr>
+					<th scope="row">{{item.name}}</th>
+					<td>{{item.des}}</td>
+					<td>{{item.price}}</td>
+					<td>{{item.quantity}}</td>
+					<td>{{item.discount}}</td>
+					<td><img src='{{item.pic.url}}' width="80" height="80" /></td>
+					<td><a href="{% url 'edit-product' item.id %}">Edit</a> | <a href="{% url 'delete-product' item.id %}">Delete</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}
