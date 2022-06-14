@@ -1,5 +1,7 @@
 from django.db import models
 
+from seller.models import Product
+
 # Create your models here.
 
 class User(models.Model):
@@ -9,3 +11,12 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Cart(models.Model):
+    productid = models.ForeignKey(Product,on_delete=models.CASCADE)
+    userid = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.userid)

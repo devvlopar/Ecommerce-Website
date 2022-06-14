@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from myapp.models import User
+from myapp.models import Cart, User
 
 # Register your models here.
 
@@ -8,3 +8,5 @@ from myapp.models import User
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display=['name','email','password']
+
+admin.site.register(Cart)

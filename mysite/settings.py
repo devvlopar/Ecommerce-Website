@@ -134,3 +134,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'devang.tops@gmail.com'
 EMAIL_HOST_PASSWORD = 'password'
+
+
+RAZOR_KEY_ID = 'rzp_test_RLekCw7HNJdFRq'
+RAZOR_KEY_SECRET = 'tiZfwulGN8vVpaXysEwIsLRn'
